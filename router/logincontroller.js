@@ -130,9 +130,9 @@ const dataSt=await dataStore.create(storeitem[0])
         payment_method_types: ['card'],
         line_items: lineItems,
         mode: "payment",
-        success_url: "http://localhost:2923/user/Success",
+        success_url: "https://prepbytes-clone-backend.onrender.com/user/Success",
         // success_url: res.send({ msg: 'Payment Successful'}),
-        cancel_url: "http://localhost:2923/user/Cancel",
+        cancel_url: "https://prepbytes-clone-backend.onrender.com/user/Cancel",
         // cancel_url: res.send({ msg: 'Payment Failed'}),
       });
   
