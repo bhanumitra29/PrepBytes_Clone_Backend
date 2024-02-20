@@ -1,9 +1,9 @@
 const mongoose=require("mongoose")
 const dataStoreSchema=new mongoose.Schema({
-    email:{
-        type:String,
-        required:true
-    },
+    // email:{
+    //     type:String,
+    //     required:true
+    // },
     id:{
         type:Number,
         required:true
@@ -29,6 +29,11 @@ const dataStoreSchema=new mongoose.Schema({
         
     },
     cat:{
+        type:String,
+        required:true
+    },
+
+    useremail:{
         type:String,
         required:true
     },

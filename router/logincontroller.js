@@ -1,8 +1,11 @@
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
+const { htmlsuccesspage } = require('./htmlsuccesspage');
 const { regSh } = require('../model/registerSchema');
 const { dataStore } = require('../model/dataStore');
-const { htmlsuccesspage } = require('./htmlsuccesspage');
+const { htmlcancelpage } = require('./htmlcancelpage');
+
+
 const secret_key = "bhanu";
 const saltround=10;
 const stripe=require("stripe")("sk_test_51OMERySJb30zHYKXRtntVAOMPx8ClokJnGOlIPN1IBbaP06OUAf0e4jFlBPAnUsEPy6uK7zORnT48RFKNRH14DC2002ZAtE6HX")
@@ -98,7 +101,7 @@ const createcheckout1 = async (req, res) => {
     const { products } = await req.body;
     console.log(products);
 
-    const storeitem=products.map((prod1)=>({
+    itemStore=products.map((prod1)=>({
         email:prod1.useremail,
         id:prod1.id,
         image:prod1.image,
@@ -109,8 +112,8 @@ const createcheckout1 = async (req, res) => {
         cat:prod1.cat
 
 }))
-const dataSt=await dataStore.create(storeitem[0])
- console.log(dataSt)
+// const dataSt=await dataStore.create(itemStore[0])
+//  console.log(dataSt)
 
   
     const lineItems = products.map((prod) => ({
@@ -139,7 +142,7 @@ const dataSt=await dataStore.create(storeitem[0])
       res.json({ id: session.id });
     } catch (error) {
       console.error('Error creating checkout session:', error);
-      res.status(500).json({ error: 'Internal Server Error' });
+      res.status(500).json({ error: 'Internal Server Error'});
   }
   };
 
@@ -162,10 +165,11 @@ const dataSt=await dataStore.create(storeitem[0])
     const rslt = await dataStore.create(itemStore[0])
     console.log(rslt)
     return res.send(htmlsuccesspage)
+    
 }
 
 const Cancel = (req, res) => {
-    return res.send({msg:"cancel"})
+    return res.send(htmlcancelpage)
 }
 
 const purchased =  async (req, res) => {

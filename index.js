@@ -32,7 +32,7 @@ app.listen(port, async()=>{
 
     try{
        await connection();
-        console.log('port is running in 2926')
+        console.log('port is running in 2923')
     }
     catch(err){
         console.log(`error :- ${err}`)

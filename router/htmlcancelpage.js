@@ -1,4 +1,4 @@
-const htmlsuccesspage = `
+const htmlcancelpage = `
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -18,9 +18,7 @@ const htmlsuccesspage = `
             text-decoration: none;
             color: white;
             background-color: #FF4252;
-            display: flex;
-            align-items: center;
-            justify-content: center;
+            display: inline-block;
             padding: 10px 20px;
             border: none;
             border-radius: 5px;
@@ -41,13 +39,13 @@ const htmlsuccesspage = `
             text-decoration: none;
         }
     </style>
-    <title>paymentResult</title>
+    <title>Payment Successful</title>
 </head>
 <body>
     <div class="mainDiv">
         <div>
             <i class="fas fa-check-circle successIcon"></i>
-            <h1>Payment successfully Completed</h1>
+            <h1>Payment successfully completed</h1>
         </div>
 
         <div>
@@ -58,6 +56,7 @@ const htmlsuccesspage = `
     </div>
 </body>
 </html>
+
 `;
 
-module.exports = {htmlsuccesspage}
+module.exports = {htmlcancelpage}
