@@ -134,6 +134,7 @@ const createcheckout1 = async (req, res) => {
         line_items: lineItems,
         mode: "payment",
         success_url: "https://prepbytes-clone-backend.onrender.com/user/Success",
+        //https://prepbytes-clone-backend.onrender.com
         // success_url: res.send({ msg: 'Payment Successful'}),
         cancel_url: "https://prepbytes-clone-backend.onrender.com/user/Cancel",
         // cancel_url: res.send({ msg: 'Payment Failed'}),
@@ -162,8 +163,8 @@ const createcheckout1 = async (req, res) => {
 
 
   const Success = async(req, res) => {
-    const rslt = await dataStore.create(itemStore[0])
-    console.log(rslt)
+    // const rslt = await dataStore.create(itemStore[0])
+    // console.log(rslt)
     return res.send(htmlsuccesspage)
     
 }
