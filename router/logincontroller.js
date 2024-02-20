@@ -102,7 +102,7 @@ const createcheckout1 = async (req, res) => {
     // console.log(products);
 
     itemStore=products.map((prod1)=>({
-        email:prod1.useremail,
+        email:prod1.email,
         id:prod1.id,
         image:prod1.image,
         name:prod1.name,
