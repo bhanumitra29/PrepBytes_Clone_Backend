@@ -1,6 +1,6 @@
 const mongoose=require("mongoose")
 const dataStoreSchema=new mongoose.Schema({
-    useremail:{
+    email:{
         type:String,
         required:true
     },
