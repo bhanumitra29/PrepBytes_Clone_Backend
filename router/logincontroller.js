@@ -178,6 +178,10 @@ const Cancel = (req, res) => {
 const purchased =  async (req, res) => {
 
     const paidCources = await dataStore.find({email:{$eq:courseUser}})
+    console.log(courseUser)
+    // console.log(paidCources)
+    const resfs = await dataStore.find({})
+    // console.log(resfs)
     return res.send(paidCources)
 }
  
